@@ -42,7 +42,7 @@ const Navbar = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Welcome
           </Typography>
-          <Button color="inherit" href="home" sx={{
+          <Button color="inherit" href="/" sx={{
             fontSize: '1.25rem',
             fontFamily: 'monospace',
             mx: '1.5',
