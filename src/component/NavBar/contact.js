@@ -4,6 +4,7 @@ import { styled, alpha } from '@mui/material/styles';
 import { color, spacing } from '@mui/system';
 
 const ContactPage = () => {
+    return (
     <Box sx={{
         p: 4,
         minHeight: '100vh',
@@ -18,9 +19,12 @@ const ContactPage = () => {
     <Typography variant="h1" gutterBottom> 
         Hello World 
     </Typography>
+    <Typography gutterBottom> 
+        This is my contact page list, testing purposes. 
+    </Typography>
 
     </Box>
-}
+)}
 
 
 export default ContactPage;

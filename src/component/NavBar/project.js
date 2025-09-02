@@ -98,7 +98,7 @@ export default function Project() {
           transition={{ duration: 2 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <Grid container spacing={3} justifyContent="center">
+          <Grid container rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 3 }} justifyContent="center">
             {projects.map((project, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
                 <Card
