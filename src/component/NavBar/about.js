@@ -19,6 +19,7 @@ const techStack = [
     { name: 'React', logo: '/images/react.png' },
     { name: 'Django', logo: '/images/django.png' },
     { name: 'laravel', logo: '/images/laravel.png' },
+    { name: 'python', logo: '/images/python.png'},
 ]
 
 const About = () => {

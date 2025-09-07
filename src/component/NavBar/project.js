@@ -16,8 +16,7 @@ const projects = [
   {
     image: "/images/portfolio24.png",
     title: "E-Portfolio Website 2024 edition",
-    description:
-      "built in using frameworks for backend including Laravel and MySQL.",
+    description: "built in using frameworks for backend including Laravel and MySQL.",
     link: "https://github.com/MBarre28/MB_PortfolioDev",
   },
   {
