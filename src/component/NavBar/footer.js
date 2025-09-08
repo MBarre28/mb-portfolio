@@ -17,7 +17,7 @@ const Footer = () => {
                 justifyContent: 'space-between',
                 bottom: 0,
                 left: 0,
-                background: 'linear-gradient(to top, #000000, #1a2a6cbd)',
+                background: 'linear-gradient(to top, #0c0c0cff, #0a0c16bd)',
                 color: '#fff',
                 textAlign: 'left',
                 py: 3,

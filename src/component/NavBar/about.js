@@ -10,16 +10,17 @@ import Link from '@mui/material/Link';
 import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'framer-motion';
 import { Card, Tooltip } from '@mui/material';
+import { Margin } from "@mui/icons-material";
 
 
 const techStack = [
-    { name: 'HTML', logo: '/images/html.png' },
-    { name: 'CSS', logo: '/images/css.png' },
-    { name: 'Javascript', logo: '/images/javascript.png' },
-    { name: 'React', logo: '/images/react.png' },
-    { name: 'Django', logo: '/images/django.png' },
-    { name: 'laravel', logo: '/images/laravel.png' },
-    { name: 'python', logo: '/images/python.png'},
+    { name: 'HTML', logo: '/images/html.png', description: 'HTML'},
+    { name: 'CSS', logo: '/images/css.png', description: 'CSS' },
+    { name: 'Javascript', logo: '/images/javascript.png', description: 'Javascript' },
+    { name: 'React', logo: '/images/react.png', description: 'React' },
+    { name: 'Django', logo: '/images/django.png', description: 'Django' },
+    { name: 'laravel', logo: '/images/laravel.png', description: 'Laravel' },
+    { name: 'Python', logo: '/images/python.png', description: 'Python'},
 ]
 
 const About = () => {
@@ -135,16 +136,19 @@ const About = () => {
                 <Typography varient="h6" fontSize={'20px'} fontFamily={'monospace'} fontWeight={'bold'} mt={'1'}> MY JOURNEY </Typography>
             </motion.div>
 
+            <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                transition={{ duration: 2 }}
+                animate={{ opacity: 1, y: 0 }}
+            >
+
             {/* Right hand section */}
             <Box
                 sx={{
-                    border: '2px solid #ffff',
                     margin: '5px',
                     mb: '1rem',
-                    borderRadius: '12px',
-                    boxShadow: '0 2px 8px rgba(55, 52, 224, 0.3)',
+                    boxShadow: '0 2px 8px rgba(174, 247, 252, 0.66)',
                     p: { xs: 2, md: 2 },
-
                 }}
 
 
@@ -158,23 +162,14 @@ const About = () => {
 
                         Hi, my real name is Muhammad Barre 👋
                     </Typography>
-                </Fade>
+                    </Fade>
                 <Typography
                     variant="h6"
                     maxWidth={'700px'}
                     fontSize={'18px'}
                     fontFamily={'monospace'}
-                > <Typewriter
-
-                        words={["I am aspiring developer and I help tech feel rich and popular. I am currently an intern graduate at Goldman Sachs who finds energy working in a tech industry for software development and cybersecurity. "]}
-                        loop={1}
-                        typeSpeed={15}
-                        deleteSpeed={0}
-                        delaySpeed={1000}
-
-
-
-                    />
+                >
+                I am aspiring developer and I help tech feel rich and popular. I am currently an intern graduate at Goldman Sachs who finds energy working in a tech industry for software development and cybersecurity.
                 </Typography>
                 <br></br>
                 <Typography
@@ -182,17 +177,8 @@ const About = () => {
                     maxWidth={'700px'}
                     fontSize={'18px'}
                     fontFamily={'monospace'}
-                > <Typewriter
-
-                        words={["My expertise in programming has shaped my creation into building e-commerce website and e-portfolio, applying frameworks including Laravel, Django and now React JS. "]}
-                        loop={1}
-                        typeSpeed={15}
-                        deleteSpeed={0}
-                        delaySpeed={1000}
-
-
-
-                    />
+                >
+                My expertise in programming has shaped my creation into building e-commerce website and e-portfolio, applying frameworks including Laravel, Django and now React JS.
                 </Typography>
                 <br></br>
                 <Typography
@@ -200,38 +186,21 @@ const About = () => {
                     maxWidth={'700px'}
                     fontSize={'18px'}
                     fontFamily={'monospace'}
-                > <Typewriter
-
-                        words={["Beyond Programming, my growing interest of cybersecurity keeps me tuned on how senstive data is protected against malicious warnings. I use my security knowledge not only protect data, to increase the hierarchy of the tech industry. "]}
-                        loop={1}
-                        typeSpeed={15}
-                        deleteSpeed={0}
-                        delaySpeed={1000}
-
-
-
-                    />
+                >
+                Beyond Programming, my growing interest of cybersecurity keeps me tuned on how senstive data is protected against malicious warnings. I use my security knowledge not only protect data, to increase the hierarchy of the tech industry.
                 </Typography>
                 <br></br>
-
                 <Typography
                     variant="h6"
                     maxWidth={'700px'}
                     fontSize={'18px'}
                     fontFamily={'monospace'}
-                > <Typewriter
-
-                        words={[" Not only I build, I teach programming and it's fundamentals for front-end and back-end systems for beginners and grow a social network on my Youtube channel."]}
-                        loop={1}
-                        typeSpeed={15}
-                        deleteSpeed={0}
-                        delaySpeed={1000}
-
-
-
-                    />
+                >
+                
+                Not only I build, I teach programming and it's fundamentals for front-end and back-end systems for beginners and grow a social network on my Youtube channel.
                 </Typography>
             </Box>
+            </motion.div>
             {/* ===== TECH STACK SECTION ===== */}
             <Box mt={8}>
                 <motion.div
@@ -260,12 +229,14 @@ const About = () => {
                                         alignItems: "center",
                                         justifyContent: "center",
                                         p: 2,
+                                        mx: 1,
                                         borderRadius: 3,
                                         bgcolor: "rgba(255,255,255,0.05)",
+                                        color: '#ffff',
                                         transition: "0.3s",
                                         "&:hover": {
                                             transform: "scale(1.1)",
-                                            boxShadow: "0 0 15px rgba(38, 60, 184, 0.6)",
+                                            boxShadow: "0 0 15px rgba(82, 192, 211, 0.6)",
                                         },
                                     }}
                                 >
@@ -273,12 +244,14 @@ const About = () => {
                                         component="img"
                                         src={tech.logo}
                                         alt={tech.name}
+                                        margin = {0.75}
                                         sx={{
                                             width: "45px",
                                             height: "45px",
-                                            objectFit: "contain",
+                                            objectFit: 'contain',
                                         }}
                                     />
+                                    {tech.description}
                                 </Card>
                             </Tooltip>
                             
@@ -286,6 +259,8 @@ const About = () => {
                     ))}
 
                 </Grid>
+
+                {/* CONTACT BOX */}
 
                 <Box mt={8}>
                     <Card sx={{

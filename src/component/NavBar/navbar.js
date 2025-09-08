@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import Link from '@mui/material';
 import { styled, alpha } from '@mui/material/styles';
 import { color, spacing } from '@mui/system';
 
@@ -38,9 +39,17 @@ const Navbar = () => {
         zIndex: (theme) => theme.zIndex.drawer + 1,
       }}>
         <Toolbar>
+          <Box 
+          component={'img'}
+          src='/images/softsen.png'
+          alt='softsen logo'
+          maxHeight={'50px'}
+          display={'absolute'}
+          > 
 
+          </Box>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Welcome
+            My portfolio
           </Typography>
           <Button color="inherit" href="/" sx={{
             fontSize: '1.25rem',
@@ -50,7 +59,7 @@ const Navbar = () => {
             letterSpacing: 3,
             transition: 'all 0.3s ease',
             '&:hover': {
-              color: '#263cb8ff',
+              color: '#43a7c5ff',
               textDecoration: 'underline',
               transform: 'scale(1.05)'
 
@@ -64,7 +73,7 @@ const Navbar = () => {
             letterSpacing: 3,
             transition: 'all 0.3s ease',
             '&:hover': {
-              color: '#263cb8ff',
+              color: '#43a7c5ff',
               textDecoration: 'underline',
               transform: 'scale(1.05)'
 
@@ -78,7 +87,7 @@ const Navbar = () => {
             letterSpacing: 3,
             transition: 'all 0.3s ease',
             '&:hover': {
-              color: '#263cb8ff',
+              color: '#43a7c5ff',
               textDecoration: 'underline',
               transform: 'scale(1.05)'
 
@@ -92,7 +101,7 @@ const Navbar = () => {
             letterSpacing: 3,
             transition: 'all 0.3s ease',
             '&:hover': {
-              color: '#263cb8ff',
+              color: '#43a7c5ff',
               textDecoration: 'underline',
               transform: 'scale(1.05)'
 

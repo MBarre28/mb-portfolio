@@ -31,7 +31,7 @@ return (
     }}
   >
     {/* Left side: Text */}
-    <Box flex="1">
+    <Box flex="6" mb={2}>
       <Typography
         variant="h6"
         fontFamily="monospace"
@@ -132,8 +132,8 @@ return (
       src="/images/softsen.png"
       alt="softsen logo"
       sx={{
-        maxWidth: '350px',
-        width: { xs: "80%", sm: "60%", md: "40%" },
+        maxWidth: '700px',
+        width: { xs: "60%", sm: "50%", md: "40%" },
         boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
         borderRadius: '10px',
       }}
