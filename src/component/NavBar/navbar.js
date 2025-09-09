@@ -1,114 +1,134 @@
-// src/components/Navbar.js
-// NAVIGATION PAGE
-import React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Link from '@mui/material';
-import { styled, alpha } from '@mui/material/styles';
-import { color, spacing } from '@mui/system';
-
-// const Search = styled('div')(({ theme }) => ({
-//   position: 'fixed',
-//   borderRadius: theme.shape.borderRadius,
-//   backgroundColor: alpha(theme.palette.common.black, 0.15),
-//   '&:hover': {
-//     backgroundColor: alpha(theme.palette.common.blue, 0.25),
-//   },
-//   marginLeft: 0,
-//   width: '100%',
-//   [theme.breakpoints.up('sm')]: {
-//     marginLeft: theme.spacing(1),
-//     width: 'auto',
-//   },
-// }));
-
+import React, { useState } from 'react';
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  Typography,
+  Button,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  useMediaQuery
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import { useTheme } from '@mui/material/styles';
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md')); // true if screen < md
+
+  const menuItems = [
+    { text: '1. HOME', link: "/" },
+    { text: '2. ABOUT', link: "/about" },
+    { text: '3. PROJECTS', link: "/project" },
+    { text: '4. CONTACT', link: "/contact" },
+  ];
+
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar 
-      position='fixed'
-      elevation={'0'}
-      sx={{
-        backgroundColor: 'rgba(0, 0, 0, 0.3)',
-        boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
-        backdropFilter: 'blur(30px)',
-        zIndex: (theme) => theme.zIndex.drawer + 1,
-      }}>
+      <AppBar
+        position="fixed"
+        elevation={0}
+        sx={{
+          backgroundColor: 'rgba(0, 0, 0, 0.3)',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
+          backdropFilter: 'blur(30px)',
+          zIndex: (theme) => theme.zIndex.drawer + 1,
+        }}
+      >
         <Toolbar>
-          <Box 
-          component={'img'}
-          src='/images/softsen.png'
-          alt='softsen logo'
-          maxHeight={'50px'}
-          display={'absolute'}
-          > 
-
-          </Box>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          {/* Logo */}
+          <Box
+            component="img"
+            src="/images/softsen.png"
+            alt="softsen logo"
+            sx={{
+              height: 50,
+              cursor: 'pointer',
+              '&:hover': {
+                transform: 'scale(1.05)',
+              },
+            }}
+          />
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, ml: 2 }}>
             My portfolio
           </Typography>
-          <Button color="inherit" href="/" sx={{
-            fontSize: '1.25rem',
-            fontFamily: 'monospace',
-            mx: '1.5',
-            fontWeight: 'bold',
-            letterSpacing: 3,
-            transition: 'all 0.3s ease',
-            '&:hover': {
-              color: '#43a7c5ff',
-              textDecoration: 'underline',
-              transform: 'scale(1.05)'
 
-            },
-          }}> 01. Home </Button> |
-          <Button color="inherit" href="about" sx={{
-            fontSize: '1.25rem',
-            fontFamily: 'monospace',
-            mx: '1.5',
-            fontWeight: 'bold',
-            letterSpacing: 3,
-            transition: 'all 0.3s ease',
-            '&:hover': {
-              color: '#43a7c5ff',
-              textDecoration: 'underline',
-              transform: 'scale(1.05)'
+          {/* Desktop Menu */}
+          {!isMobile &&
+            menuItems.map((item, index) => (
+              <Button
+                key={index}
+                href={item.link}
+                color="inherit"
+                sx={{
+                  fontSize: '1.25rem',
+                  fontFamily: 'monospace',
+                  mx: 1.5,
+                  fontWeight: 'bold',
+                  letterSpacing: 'normal',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    color: '#43a7c5ff',
+                    textDecoration: 'underline',
+                    transform: 'scale(1.05)',
+                  },
+                }}
+              >
+                {item.text}
+              </Button>
+            ))}
 
-            },
-          }}>02. About </Button> |
-          <Button color="inherit" href="project" sx={{
-            fontSize: '1.25rem',
-            fontFamily: 'monospace',
-            mx: '1.5',
-            fontWeight: 'bold',
-            letterSpacing: 3,
-            transition: 'all 0.3s ease',
-            '&:hover': {
-              color: '#43a7c5ff',
-              textDecoration: 'underline',
-              transform: 'scale(1.05)'
-
-            },
-          }}>03. projects </Button> |
-          <Button color="inherit" href="contact" sx={{
-            fontSize: '1.25rem',
-            fontFamily: 'monospace',
-            mx: '1.5',
-            fontWeight: 'bold',
-            letterSpacing: 3,
-            transition: 'all 0.3s ease',
-            '&:hover': {
-              color: '#43a7c5ff',
-              textDecoration: 'underline',
-              transform: 'scale(1.05)'
-
-            },
-          }}>04. Contact</Button>
+          {/* Mobile Menu Button */}
+          {isMobile && (
+            <IconButton
+              color="inherit"
+              edge="end"
+              onClick={() => setOpen(true)}
+            >
+              <MenuIcon />
+            </IconButton>
+          )}
         </Toolbar>
       </AppBar>
+
+      {/* Drawer for Mobile */}
+      <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
+        <Box sx={{ width: 250, background: '#111', height: '100%', color: '#fff', p: 2, fontSize: '1rem',
+                  fontFamily: 'monospace', fontWeight: 'bold',}}>
+          <List>
+            {menuItems.map((item, index) => (
+              <ListItem
+                button
+                key={index}
+                component="a"
+                href={item.link}
+                onClick={() => setOpen(false)}
+                sx={{
+                  color: '#ffff',
+                  transition: 'all 0.3s ease',
+                  mt: 5,
+                  '&:hover': {
+                    backgroundColor: 'rgba(255,255,255,0.1)',
+                  },
+                }}
+              >
+                
+                <ListItemText primary={item.text} />
+              </ListItem>
+            ))}
+          </List>
+          <br></br>
+          <br></br>
+            <Typography variant = 'h6' sx = {{fontFamily: 'monospace',
+                  mx: 1.5,}}> 
+              © {new Date().getFullYear()} MB_softsen. All rights reserved.
+          </Typography>
+        </Box>
+      </Drawer>
     </Box>
   );
 };

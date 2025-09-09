@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import YouTubeIcon from '@mui/icons-material/YouTube';

@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from 'react';
 import { Typography, Button, Box, Fade, Grid } from "@mui/material";
 import { styled, alpha, duration } from '@mui/material/styles';
 import { color, flex, spacing } from '@mui/system';
@@ -13,15 +13,7 @@ import { Card, Tooltip } from '@mui/material';
 import { Margin } from "@mui/icons-material";
 
 
-const techStack = [
-    { name: 'HTML', logo: '/images/html.png', description: 'HTML'},
-    { name: 'CSS', logo: '/images/css.png', description: 'CSS' },
-    { name: 'Javascript', logo: '/images/javascript.png', description: 'Javascript' },
-    { name: 'React', logo: '/images/react.png', description: 'React' },
-    { name: 'Django', logo: '/images/django.png', description: 'Django' },
-    { name: 'laravel', logo: '/images/laravel.png', description: 'Laravel' },
-    { name: 'Python', logo: '/images/python.png', description: 'Python'},
-]
+
 
 const About = () => {
     return (
@@ -201,64 +193,6 @@ const About = () => {
                 </Typography>
             </Box>
             </motion.div>
-            {/* ===== TECH STACK SECTION ===== */}
-            <Box mt={8}>
-                <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                transition={{ duration: 2 }}
-                animate={{ opacity: 1, y: 0 }}
-                >
-                <Typography variant="h6"
-                    fontWeight={'bold'}
-                    fontSize={'20px'}
-                    fontFamily={'monospace'}
-                    color="#ffff"
-                    align="center"
-                >
-
-                    My Tech Stack 🛠
-                </Typography>
-                <br></br>
-                <Grid container spacing={2} justifyContent={'center'}>
-                    {techStack.map((tech, index) => (
-                        <Grid item xs={4} sm={3} md={2} key={index}>
-                            <Tooltip title={tech.name} arrow>
-                                <Card
-                                    sx={{
-                                        display: "flex",
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                        p: 2,
-                                        mx: 1,
-                                        borderRadius: 3,
-                                        bgcolor: "rgba(255,255,255,0.05)",
-                                        color: '#ffff',
-                                        transition: "0.3s",
-                                        "&:hover": {
-                                            transform: "scale(1.1)",
-                                            boxShadow: "0 0 15px rgba(82, 192, 211, 0.6)",
-                                        },
-                                    }}
-                                >
-                                    <Box
-                                        component="img"
-                                        src={tech.logo}
-                                        alt={tech.name}
-                                        margin = {0.75}
-                                        sx={{
-                                            width: "45px",
-                                            height: "45px",
-                                            objectFit: 'contain',
-                                        }}
-                                    />
-                                    {tech.description}
-                                </Card>
-                            </Tooltip>
-                            
-                        </Grid>
-                    ))}
-
-                </Grid>
 
                 {/* CONTACT BOX */}
 
@@ -300,8 +234,6 @@ const About = () => {
                     </Button>
                     </Card>
                 </Box>
-                </motion.div>
-            </Box>
         </Box>
     )
 }
