@@ -52,7 +52,7 @@ const AboutTabs = () => {
           "& .MuiTab-root": {
             fontWeight: "bold",
             color: "white",
-            minWidth: 100,
+            minWidth: 'auto',
           },
           "& .Mui-selected": {
             color: "#00e5ff",
