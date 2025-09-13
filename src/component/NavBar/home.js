@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Typography, Box, Button, Fade, Grid, Card, Tooltip, Container, useMediaQuery,  } from '@mui/material';
+import { Typography, Box, Button, Fade, Grid, Card, Tooltip, Container, useMediaQuery, useTheme,  } from '@mui/material';
 import { motion } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter';
 
@@ -16,11 +16,14 @@ const techStack = [
 const HomePage = () => {
   const [checked, setChecked] = useState(false);
   const [open, isSetOpen] = useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   useEffect(() => {
     setChecked(true);
   }, []);
 
+const matches = useMediaQuery('(min-width:600px)');
   return (
     <Box
       sx={{
@@ -114,11 +117,18 @@ const HomePage = () => {
       {/* Tech Stack Section */}
       <Box sx={{ py: 5, backgroundColor: 'rgba(255,255,255,0.05)' }}>
         <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.5 }}>
+
+          {/* Mobile responsiveness in home page */}
+
           <Typography
-            variant="h2"
+ 
             fontWeight="bold"
             fontFamily="monospace"
             align="center"
+            centered = {!isMobile}
+            variant={isMobile ? 'scrollable' : 'h3'}
+            scrollButtons={isMobile ? 'auto' : true}
+
             gutterBottom
           >
             My Tech Stack 🛠

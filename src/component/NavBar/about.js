@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { Typography, Button, Box, Fade, Grid } from "@mui/material";
+import { React, useState } from 'react';
+import { Typography, Button, Box, Fade, Grid, useMediaQuery, Tab, Tabs } from "@mui/material";
 import { styled, alpha, duration } from '@mui/material/styles';
-import { color, flex, spacing } from '@mui/system';
+import { color, flex, spacing, useTheme } from '@mui/system';
 import IconButton from '@mui/material/IconButton';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -11,11 +11,23 @@ import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'framer-motion';
 import { Card, Tooltip } from '@mui/material';
 import { Margin } from "@mui/icons-material";
+import { lightGreen } from '@mui/material/colors';
+import AboutTabs from './layout/aboutabs';
 
 
 
 
 const About = () => {
+    const [value, setValue] = useState(0);
+    const matches = useMediaQuery('(min-width:600px)');
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+
+
     return (
         <Box
             display={flex}
@@ -134,87 +146,96 @@ const About = () => {
                 animate={{ opacity: 1, y: 0 }}
             >
 
-            {/* Right hand section */}
-            <Box
-                sx={{
-                    margin: '5px',
-                    mb: '1rem',
-                    boxShadow: '0 2px 8px rgba(174, 247, 252, 0.66)',
-                    p: { xs: 2, md: 2 },
-                }}
+                {/* Right hand section */}
+                <Box
+                    sx={{
+                        margin: '5px',
+                        mb: '1rem',
+                        boxShadow: '0 2px 8px rgba(174, 247, 252, 0.66)',
+                        p: { xs: 2, md: 2 },
+                    }}
 
 
-            >
-                <Fade in={'checked'} timeout={2000}>
+                >
+                    <Fade in={'checked'} timeout={2000}>
+                        <Typography
+                            fontWeight='bold'
+                            fontSize={'30px'}
+                            fontFamily={'monospace'}
+                        >
+
+                            Hi, my real name is Muhammad Barre 👋
+                        </Typography>
+                    </Fade>
                     <Typography
-                        fontWeight='bold'
-                        fontSize={'30px'}
+                        variant="h6"
+                        maxWidth={'700px'}
+                        fontSize={'18px'}
+                        fontFamily={'monospace'}
+                    >
+                        I am aspiring developer and I help tech feel rich and popular. I am currently an intern graduate at Goldman Sachs who finds energy working in a tech industry for software development and cybersecurity.
+                    </Typography>
+                    <br></br>
+                    <Typography
+                        variant="h6"
+                        maxWidth={'700px'}
+                        fontSize={'18px'}
+                        fontFamily={'monospace'}
+                    >
+                        My expertise in programming has shaped my creation into building e-commerce website and e-portfolio, applying frameworks including Laravel, Django and now React JS.
+                    </Typography>
+                    <br></br>
+                    <Typography
+                        variant="h6"
+                        maxWidth={'700px'}
+                        fontSize={'18px'}
+                        fontFamily={'monospace'}
+                    >
+                        Beyond Programming, my growing interest of cybersecurity keeps me tuned on how senstive data is protected against malicious warnings. I use my security knowledge not only protect data, to increase the hierarchy of the tech industry.
+                    </Typography>
+                    <br></br>
+                    <Typography
+                        variant="h6"
+                        maxWidth={'700px'}
+                        fontSize={'18px'}
                         fontFamily={'monospace'}
                     >
 
-                        Hi, my real name is Muhammad Barre 👋
+                        Not only I build, I teach programming and it's fundamentals for front-end and back-end systems for beginners and grow a social network on my Youtube channel.
                     </Typography>
-                    </Fade>
-                <Typography
-                    variant="h6"
-                    maxWidth={'700px'}
-                    fontSize={'18px'}
-                    fontFamily={'monospace'}
-                >
-                I am aspiring developer and I help tech feel rich and popular. I am currently an intern graduate at Goldman Sachs who finds energy working in a tech industry for software development and cybersecurity.
-                </Typography>
-                <br></br>
-                <Typography
-                    variant="h6"
-                    maxWidth={'700px'}
-                    fontSize={'18px'}
-                    fontFamily={'monospace'}
-                >
-                My expertise in programming has shaped my creation into building e-commerce website and e-portfolio, applying frameworks including Laravel, Django and now React JS.
-                </Typography>
-                <br></br>
-                <Typography
-                    variant="h6"
-                    maxWidth={'700px'}
-                    fontSize={'18px'}
-                    fontFamily={'monospace'}
-                >
-                Beyond Programming, my growing interest of cybersecurity keeps me tuned on how senstive data is protected against malicious warnings. I use my security knowledge not only protect data, to increase the hierarchy of the tech industry.
-                </Typography>
-                <br></br>
-                <Typography
-                    variant="h6"
-                    maxWidth={'700px'}
-                    fontSize={'18px'}
-                    fontFamily={'monospace'}
-                >
-                
-                Not only I build, I teach programming and it's fundamentals for front-end and back-end systems for beginners and grow a social network on my Youtube channel.
-                </Typography>
-            </Box>
+                </Box>
             </motion.div>
 
-                {/* CONTACT BOX */}
+            {/* SMALL EXTRA TABS */}
+                <div>
+            <AboutTabs />
+            </div>
 
-                <Box mt={8}>
-                    <Card sx={{
-                        background: 'rgba(17, 8, 8, 0)',
-                        color: '#ffff',
-                        padding: '10px',
-                        border: '2px solid #ffff',
-                        boxShadow: '0 2px 8px rgba(55, 52, 224, 0.3)',
-                    }}>
-                    <Typography variant="h2" 
-                    fontWeight={'bold'}
-                    fontFamily={'monospace'}
-                    fontSize={'30px'}
-                    > 
-                    Contact me for business enquiries.
+                {/* Tab Panels */}
+
+
+
+            {/* CONTACT BOX */}
+
+            <Box mt={8}>
+                <Card sx={{
+                    background: 'rgba(17, 8, 8, 0)',
+                    color: '#ffff',
+                    padding: '10px',
+                    border: '2px solid #ffff',
+                    boxShadow: '0 2px 8px rgba(55, 52, 224, 0.3)',
+                }}>
+                    <Typography variant="h2"
+                        fontWeight={'bold'}
+                        fontFamily={'monospace'}
+                        fontSize={'30px'}
+                    >
+                        Contact me for business enquiries.
                     </Typography>
-                    <Button fontFamily={'monospace'} component = {Link} href="/contact" sx={{
+                    <Button fontFamily={'monospace'} component={Link} href="/contact" sx={{
                         color: '#ffff',
                         textTransform: 'lowercase',
-                        ":hover":{
+                        ":hover": {
                             color: '#263cb8ff',
                             textDecoration: 'underline',
                             transform: 'scale(1.05)',
@@ -222,21 +243,22 @@ const About = () => {
                         }
                     }}>
 
-                    <Typography variant="paragraph" 
-                    fontWeight={'bold'}
-                    fontFamily={'monospace'}
-                    fontSize={'15px'}
-                    align="center"
-                    > 
-                    <br></br>
-                    Click here to contact ={">"}
-                    </Typography>
+                        <Typography variant="paragraph"
+                            fontWeight={'bold'}
+                            fontFamily={'monospace'}
+                            fontSize={'15px'}
+                            align="center"
+                        >
+                            <br></br>
+                            Click here to contact ={">"}
+                        </Typography>
                     </Button>
-                    </Card>
-                </Box>
-        </Box>
-    )
-}
+                </Card>
+            </Box>
+            </Box>
+    );
+};
+
 
 
 export default About;
