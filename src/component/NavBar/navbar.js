@@ -8,6 +8,7 @@ import {
   IconButton,
   Drawer,
   List,
+  Link,
   ListItem,
   ListItemText,
   useMediaQuery
@@ -41,6 +42,7 @@ const Navbar = () => {
       >
         <Toolbar>
           {/* Logo */}
+          <Link url = '/'>
           <Box
             component="img"
             src="/images/softsen.png"
@@ -53,6 +55,7 @@ const Navbar = () => {
               },
             }}
           />
+          </Link>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, ml: 2 }}>
             My portfolio
           </Typography>

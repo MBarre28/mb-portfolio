@@ -51,7 +51,7 @@ const ContactPage = () => {
         {/* Title */}
         <Typography
           variant="h3"
-          sx={{ mb: 3, fontFamily: "monospace", fontWeight: "bold", textAlign: "center" }}
+          sx={{ mt: 6, fontFamily: "monospace", fontWeight: "bold", textAlign: "center" }}
         >
           <Typewriter words={["Get in Touch 💬"]} loop={false} typeSpeed={20} delaySpeed={1000} />
         </Typography>
@@ -59,7 +59,7 @@ const ContactPage = () => {
         {/* Subtitle */}
         <Typography
           variant="body1"
-          sx={{ mb: 4, fontSize: "18px", textAlign: "center", maxWidth: "600px", mx: "auto" }}
+          sx={{ mt: 4, fontSize: "18px", textAlign: "center", maxWidth: "600px", mx: "auto" }}
         >
           Feel free to contact me through any of the platforms below. I'm here to support.
         </Typography>
@@ -67,7 +67,7 @@ const ContactPage = () => {
         {/* Dynamic Grid */}
         <Grid container spacing={8} justifyContent="center">
           {contactDetails.map((item, index) => (
-            <Grid item xs={12} sm={6} md={2} key={index}>
+            <Grid item xs={12} sm={6} md={2} key={index} mt = {2}>
               <Card
                 sx={{
                   display: "absolute",

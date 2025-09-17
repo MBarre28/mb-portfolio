@@ -1,7 +1,7 @@
 import { React, useState } from 'react';
 import { Typography, Button, Box, Fade, Grid, useMediaQuery, Tab, Tabs } from "@mui/material";
 import { styled, alpha, duration } from '@mui/material/styles';
-import { color, flex, spacing, useTheme } from '@mui/system';
+import { color, display, flex, height, margin, maxWidth, spacing, useTheme, width } from '@mui/system';
 import IconButton from '@mui/material/IconButton';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -19,7 +19,7 @@ import AboutTabs from './layout/aboutabs';
 
 const About = () => {
     const [value, setValue] = useState(0);
-    const matches = useMediaQuery('(min-width:600px)');
+    const matches = useMediaQuery('(min-width:200px)');
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -30,11 +30,11 @@ const About = () => {
 
     return (
         <Box
-            display={flex}
             flex="1"
             alignItems="center"
             justifyContent="space-between"
             flexDirection={{ xs: "column" }}
+            display={'flex'}
             px='8'
             sx={{
                 minHeight: '100vh',
@@ -42,7 +42,6 @@ const About = () => {
                 color: '#fff',
                 p: 4,
                 pt: 12,
-                display: "flex",
                 justifyContent: "space-between",
                 gap: 6,
             }} >
@@ -60,6 +59,7 @@ const About = () => {
                     component='img'
                     src='/images/graduation.png'
                     alt='profile'
+                    display={'flex'}
                     sx={{
                         width: { xs: "180px", md: "250px" },
                         height: { xs: "180px", md: "250px" },
@@ -121,6 +121,7 @@ const About = () => {
                     href="https://www.youtube.com/@softssen"
                     color="inherit"
                     textAlign='right'
+                    centered = {!isMobile}
                     sx={{
                         transition: 'linear 0.3s',
                         mt: 2,
@@ -139,7 +140,6 @@ const About = () => {
                 </Typography>
                 <Typography varient="h6" fontSize={'20px'} fontFamily={'monospace'} fontWeight={'bold'} mt={'1'}> MY JOURNEY </Typography>
             </motion.div>
-
             <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 transition={{ duration: 2 }}
@@ -149,9 +149,7 @@ const About = () => {
                 {/* Right hand section */}
                 <Box
                     sx={{
-                        margin: '5px',
                         mb: '1rem',
-                        boxShadow: '0 2px 8px rgba(174, 247, 252, 0.66)',
                         p: { xs: 2, md: 2 },
                     }}
 
@@ -207,7 +205,7 @@ const About = () => {
             </motion.div>
 
             {/* SMALL EXTRA TABS */}
-                <div>
+            <div>
             <AboutTabs />
             </div>
 
@@ -217,7 +215,7 @@ const About = () => {
 
             {/* CONTACT BOX */}
 
-            <Box mt={8}>
+            <Box mt={8} display={'flex'}>
                 <Card sx={{
                     background: 'rgba(17, 8, 8, 0)',
                     color: '#ffff',

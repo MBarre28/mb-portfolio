@@ -20,10 +20,6 @@ const AboutTabs = () => {
 
   // Components for each tab
   const tabContent = [
-    <Certification />,
-    <Education />,
-    <Experience />,
-    <Skills />
   ];
 
   return (
@@ -33,9 +29,8 @@ const AboutTabs = () => {
         borderRadius: 2,
         boxShadow: "0 0 15px #00e5ff",
         p: 2,
-        maxWidth: "900px",
         margin: "20px auto",
-        flexDirection: isMobile ? "column" : "row",
+        flexDirection: isMobile ? "column" : "column",
         justifyContent: "center",
         gap: 2,
         marginBottom: "20px",
@@ -52,7 +47,6 @@ const AboutTabs = () => {
           "& .MuiTab-root": {
             fontWeight: "bold",
             color: "white",
-            minWidth: "50px",
           },
           "& .Mui-selected": {
             color: "#00e5ff",
@@ -69,11 +63,15 @@ const AboutTabs = () => {
       </Tabs>
 
       {/* Content Section with Animation */}
-      <Box sx={{ mt: 3 }}>
+      <Box sx={{ p: 1, textAlign: 'left' }}>
+        {value === 0 && < Certification />}
+        {value === 1 && < Education />}
+        {value === 0 && < Experience />}
+        {value === 0 && < Skills />}
         <motion.div
           key={value}
           initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 5 }}
           transition={{ duration: 0.4 }}
         >
           {tabContent[value]}
