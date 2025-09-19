@@ -7,12 +7,12 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 const experience = () => {
     return (
         <Box> 
-            <div style = {{ color: '#ffff', fontFamily: 'monospace', maxWidth: '600px'}}>
-            <h2> DFN Project SEARCH - Intern </h2>
             <img src='images/goldmansachs.png' style={{ height: '60px'}}>
             </img>
             <img src='images/dfnprojectsearch.png' style={{height: '60px'}}>
             </img>
+            <div style = {{ color: '#ffff', fontFamily: 'monospace', maxWidth: '600px'}}>
+            <h2> DFN Project SEARCH - Intern </h2>
             <p> <PlaceIcon sx={{ fontSize: 'small' }}> </PlaceIcon> Goldman Sachs, London | <CalendarTodayIcon sx={{ fontSize: 'small' }}> </CalendarTodayIcon> Sept 2024 - July 2025 </p>
             <h2> Legal Adminstration 3rd Rotation 💻 </h2>
             <p> <CalendarTodayIcon sx = {{fontSize: 'small'}}> </CalendarTodayIcon> Apr 2025 - June 2025 </p>
