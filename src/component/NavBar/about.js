@@ -209,9 +209,6 @@ const About = () => {
             <AboutTabs />
             </div>
 
-                {/* Tab Panels */}
-
-
 
             {/* CONTACT BOX */}
 

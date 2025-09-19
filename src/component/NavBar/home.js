@@ -47,10 +47,9 @@ const matches = useMediaQuery('(min-width:600px)');
                 delaySpeed={1000}
               />
             </Typography>
-
             <Fade in={checked} timeout={2000}>
               <Typography
-                variant="h2"
+                variant="h3"
                 fontFamily="monospace"
                 fontWeight="bold"
                 sx={{ py: 2 }}
@@ -99,10 +98,12 @@ const matches = useMediaQuery('(min-width:600px)');
 
           {/* Right side - Image */}
           <Grid item xs={12} md={6} sx={{ textAlign: 'center' }}>
+            {!isMobile && (
             <Box
               component="img"
               src="/images/softsen.png"
               alt="softsen logo"
+              variant = {!isMobile ? 'image' : 'delete' }
               sx={{
                 maxWidth: '400px',
                 width: { xs: "70%", sm: "60%", md: "100%" },
@@ -110,6 +111,7 @@ const matches = useMediaQuery('(min-width:600px)');
                 boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
               }}
             />
+            )}
           </Grid>
         </Grid>
       </Container>
@@ -125,9 +127,7 @@ const matches = useMediaQuery('(min-width:600px)');
             fontWeight="bold"
             fontFamily="monospace"
             align="center"
-            centered = {!isMobile}
-            variant={isMobile ? 'scrollable' : 'h3'}
-            scrollButtons={isMobile ? 'auto' : true}
+            centered = {!isMobile ? 'center' : 'h1'}
 
             gutterBottom
           >

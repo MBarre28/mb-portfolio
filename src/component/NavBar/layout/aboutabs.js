@@ -25,7 +25,7 @@ const AboutTabs = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#4527a0",
+        backgroundColor: "#190d3bff",
         borderRadius: 2,
         boxShadow: "0 0 15px #00e5ff",
         p: 2,
@@ -63,11 +63,11 @@ const AboutTabs = () => {
       </Tabs>
 
       {/* Content Section with Animation */}
-      <Box sx={{ p: 1, textAlign: 'left' }}>
+      <Box sx={{ p: 3, textAlign: 'left' }}>
         {value === 0 && < Certification />}
         {value === 1 && < Education />}
-        {value === 0 && < Experience />}
-        {value === 0 && < Skills />}
+        {value === 2 && < Experience />}
+        {value === 3 && < Skills />}
         <motion.div
           key={value}
           initial={{ opacity: 0, y: 10 }}
