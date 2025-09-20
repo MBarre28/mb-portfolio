@@ -7,6 +7,11 @@ import { motion } from 'framer-motion';
 
 const education = () => {
     return (
+        <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            transition={{ duration: 1 }}
+            animate={{ opacity: 1, y: 0 }}
+        >
         <Box>
             <h2 gutterBottom style={{ color: '#ffff', fontFamily: 'monospace'}}> William Morris Sixth Form </h2>
             <p style={{ fontFamily: 'monospace' }}> <PlaceIcon sx={{ fontSize: 'small' }}> </PlaceIcon> London, England, United Kingdom |  <CalendarTodayIcon sx={{ fontSize: 'small' }}> </CalendarTodayIcon><i> Sept 2021 - July 2024 </i> </p>
@@ -22,6 +27,7 @@ const education = () => {
                 <li> GCSE Mathematics - Grade 5 </li>
             </ul>
         </Box>
+        </motion.div>
     );
 }
 

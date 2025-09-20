@@ -56,10 +56,10 @@ const AboutTabs = () => {
           },
         }}
       >
-        <Tab label="1. CERTIFICATION" />
-        <Tab label="2. EDUCATION" />
-        <Tab label="3. EXPERIENCE" />
-        <Tab label="4. SKILLS" />
+        <Tab label=" 🎓 CERTIFICATION" />
+        <Tab label=" 📚 EDUCATION" />
+        <Tab label=" 🌎 EXPERIENCE" />
+        <Tab label=" 🧠 SKILLS" />
       </Tabs>
 
       {/* Content Section with Animation */}

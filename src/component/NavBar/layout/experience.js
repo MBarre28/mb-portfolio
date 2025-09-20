@@ -2,12 +2,17 @@ import React from 'react';
 import { Typography, Box } from '@mui/material';
 import PlaceIcon from "@mui/icons-material/Place";
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
-
+import { motion } from 'framer-motion';
 
 const experience = () => {
     return (
+        <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            transition={{ duration: 1 }}
+            animate={{ opacity: 1, y: 0 }}
+        >
         <Box> 
-            <img src='images/goldmansachs.png' style={{ height: '60px'}}>
+            <img src='images/goldmansachs.png' style={{ height: '60px', marginBlock: 3}}>
             </img>
             <img src='images/dfnprojectsearch.png' style={{height: '60px'}}>
             </img>
@@ -31,6 +36,7 @@ const experience = () => {
             </ul>
             </div>
         </Box>
+        </motion.div>
             
     
 
