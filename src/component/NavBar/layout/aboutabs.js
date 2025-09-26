@@ -25,7 +25,6 @@ const AboutTabs = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#190d3bff",
         borderRadius: 2,
         boxShadow: "0 0 15px #00e5ff",
         p: 2,

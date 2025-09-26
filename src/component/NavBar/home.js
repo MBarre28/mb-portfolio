@@ -170,7 +170,9 @@ const matches = useMediaQuery('(min-width:600px)');
         </motion.div>
       </Box>
     </Box>
+    
   );
 };
+
 
 export default HomePage;

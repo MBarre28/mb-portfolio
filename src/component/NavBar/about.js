@@ -217,7 +217,6 @@ const About = () => {
                     background: 'rgba(17, 8, 8, 0)',
                     color: '#ffff',
                     padding: '10px',
-                    border: '2px solid #ffff',
                     boxShadow: '0 2px 8px rgba(55, 52, 224, 0.3)',
                 }}>
                     <Typography variant="h2"
@@ -230,10 +229,12 @@ const About = () => {
                     <Button fontFamily={'monospace'} component={Link} href="/contact" sx={{
                         color: '#ffff',
                         textTransform: 'lowercase',
+                        border: '1px solid #ffff',
                         ":hover": {
                             color: '#263cb8ff',
-                            textDecoration: 'underline',
                             transform: 'scale(1.05)',
+                            fontSize: '20px',
+                            width: '300px',
 
                         }
                     }}>
@@ -242,10 +243,10 @@ const About = () => {
                             fontWeight={'bold'}
                             fontFamily={'monospace'}
                             fontSize={'15px'}
-                            align="center"
+                            textAlign={'center'}
                         >
                             <br></br>
-                            Click here to contact ={">"}
+                            Click here to contact
                         </Typography>
                     </Button>
                 </Card>

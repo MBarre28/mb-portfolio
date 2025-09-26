@@ -12,7 +12,7 @@ const contactDetails = [
     title: "Email",
     icon: <ContactMailIcon fontSize="large" />,
     link: "mailto:mmuh8311@gmail.com",
-    description: "Contact me via email for info",
+    description: "Contact us via email for business inquiries",
   },
   {
     title: "Location",
@@ -27,7 +27,7 @@ const contactDetails = [
   },
   {
     title: 'Youtube',
-    icon: <YouTubeIcon fontSize="large"/>,
+    icon: <YouTubeIcon fontSize="large" />,
     link: 'https://www.youtube.com/@softssen',
     description: 'Subscribe to my youtube channel for exclusive content!',
 
@@ -47,6 +47,11 @@ const ContactPage = () => {
         py: 5,
       }}
     >
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        transition={{ duration: 2 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
       <Container maxWidth="md">
         {/* Title */}
         <Typography
@@ -61,13 +66,14 @@ const ContactPage = () => {
           variant="body1"
           sx={{ mt: 4, fontSize: "18px", textAlign: "center", maxWidth: "600px", mx: "auto" }}
         >
-          Feel free to contact me through any of the platforms below. I'm here to support.
+          Feel free to contact me through any of the platforms below.
+          Our team <b> MBsoftsen </b> help small businesses build and improve automated websites.
         </Typography>
 
         {/* Dynamic Grid */}
         <Grid container spacing={8} justifyContent="center">
           {contactDetails.map((item, index) => (
-            <Grid item xs={12} sm={6} md={2} key={index} mt = {2}>
+            <Grid item xs={12} sm={6} md={2} key={index} mt={2}>
               <Card
                 sx={{
                   display: "absolute",
@@ -99,21 +105,21 @@ const ContactPage = () => {
                   {/* Optional Link */}
                   {item.link && (
                     <Button sx={{
-                        color: '#ffff',
-                        background: 'rgba(0, 0, 0, 0.08)',
-                        textDecoration: 'dotted',
-                        textTransform: 'none',
+                      color: '#ffff',
+                      background: 'rgba(0, 0, 0, 0.08)',
+                      textDecoration: 'dotted',
+                      textTransform: 'none',
 
 
-                    }}> 
+                    }}>
                       <Link
                         href={item.link}
                         rel="noopener noreferrer"
-                        sx={{ display: "block", mt: 1, color: "#46cf2aff", fontSize: 'large'}}
+                        sx={{ display: "block", mt: 1, color: "#46cf2aff", fontSize: 'large' }}
                       >
                         {item.title === "Email" ? "Send Email" : "Visit Profile"}
                       </Link>
-                      </Button>
+                    </Button>
                   )}
                 </CardContent>
               </Card>
@@ -121,6 +127,7 @@ const ContactPage = () => {
           ))}
         </Grid>
       </Container>
+      </motion.div>
     </Box>
   );
 };

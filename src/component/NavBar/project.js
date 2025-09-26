@@ -8,6 +8,8 @@ import {
   Card,
   CardContent,
   Backdrop,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
@@ -47,6 +49,8 @@ const projects = [
 export default function Project() {
   const [open, setOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const handleOpen = (project) => {
     setSelectedProject(project);
@@ -99,13 +103,20 @@ export default function Project() {
         >
           <Grid container rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 3 }} justifyContent="center">
             {projects.map((project, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
+              <Grid 
+              item 
+              xs={12} 
+              sm={6} 
+              md={4} 
+              key={index}
+              >
                 <Card
                   onClick={() => handleOpen(project)}
+                  variant = {!isMobile ? 'image' : true }
                   sx={{
-                    p: 2,
+                    p: { xs: 1.5, sm: 2 },
                     border: "1px solid #4a90e2",
-                    borderRadius: 3,
+                    borderRadius: 5,
                     bgcolor: "rgba(255,255,255,0.05)",
                     textAlign: "center",
                     color: "#ffff",
@@ -123,11 +134,10 @@ export default function Project() {
                       src={project.image}
                       alt={project.title}
                       sx={{
-                        height: 160,
-                        width: "100%",
+                        height: { xs: 150, sm: 190 },
+                        minWidth: "100%",
                         objectFit: "cover",
                         borderRadius: 2,
-                        mb: 2,
                       }}
                     />
                   )}
@@ -136,7 +146,7 @@ export default function Project() {
                     <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1 }}>
                       {project.title}
                     </Typography>
-                    <Typography variant="body2" sx={{ mb: 2 }}>
+                    <Typography variant="body2" sx={{ mb: 2, maxWidth: '500px' }}>
                       {project.description}
                     </Typography>
                   </CardContent>
@@ -177,6 +187,7 @@ export default function Project() {
                   objectFit: "contain",
                   borderRadius: 2,
                   mb: 2,
+                  maxWidth: '500px',
                 }}
               />
             )}
