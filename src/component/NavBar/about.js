@@ -158,7 +158,7 @@ const About = () => {
                     <Fade in={'checked'} timeout={2000}>
                         <Typography
                             fontWeight='bold'
-                            fontSize={'30px'}
+                            fontSize={'25px'}
                             fontFamily={'monospace'}
                         >
 
@@ -212,24 +212,25 @@ const About = () => {
 
             {/* CONTACT BOX */}
 
-            <Box mt={8} display={'flex'}>
+            <Box mt={8} display={'flex'} textAlign={'center'}>
                 <Card sx={{
+                    boxShadow: "0 0 15px #00e5ff",
                     background: 'rgba(17, 8, 8, 0)',
                     color: '#ffff',
-                    padding: '10px',
-                    boxShadow: '0 2px 8px rgba(55, 52, 224, 0.3)',
                 }}>
                     <Typography variant="h2"
                         fontWeight={'bold'}
                         fontFamily={'monospace'}
                         fontSize={'30px'}
+                        margin={3}
                     >
                         Contact me for business enquiries.
                     </Typography>
-                    <Button fontFamily={'monospace'} component={Link} href="/contact" sx={{
+                    <Button component={Link} href="/contact" sx={{
                         color: '#ffff',
-                        textTransform: 'lowercase',
-                        border: '1px solid #ffff',
+                        textTransform: 'uppercase',
+                        padding: 1,
+                        borderRadius: 5,
                         ":hover": {
                             color: '#263cb8ff',
                             transform: 'scale(1.05)',
@@ -246,7 +247,7 @@ const About = () => {
                             textAlign={'center'}
                         >
                             <br></br>
-                            Click here to contact
+                            Click here to contact 📞
                         </Typography>
                     </Button>
                 </Card>

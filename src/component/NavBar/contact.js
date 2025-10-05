@@ -55,7 +55,7 @@ const ContactPage = () => {
       <Container maxWidth="md">
         {/* Title */}
         <Typography
-          variant="h3"
+          variant="h4"
           sx={{ mt: 6, fontFamily: "monospace", fontWeight: "bold", textAlign: "center" }}
         >
           <Typewriter words={["Get in Touch 💬"]} loop={false} typeSpeed={20} delaySpeed={1000} />

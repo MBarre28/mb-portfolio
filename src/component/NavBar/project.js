@@ -76,7 +76,7 @@ export default function Project() {
     >
       <Container maxWidth="lg">
         <Typography
-          variant="h3"
+          variant="h4"
           gutterBottom
           sx={{
             mt: 8,
@@ -88,20 +88,30 @@ export default function Project() {
         >
           <Typewriter
             words={["My Projects 💻"]}
-            loop={false}
             typeSpeed={20}
             deleteSpeed={0}
             delaySpeed={1000}
           />
         </Typography>
         <br />
+        <Typography
+        variant="h6"
+        gutterBottom
+        sx={{
+          textAlign: 'center',
+          fontFamily: 'monospace',
+          fontWeight: 'bold'
+        }}
+        > 
+        A collection of creative projects combining with all tech stack 
+        </Typography>
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           transition={{ duration: 2 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <Grid container rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 3 }} justifyContent="center">
+          <Grid container rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 3 }} margin={5} justifyContent="center">
             {projects.map((project, index) => (
               <Grid 
               item 
@@ -114,7 +124,7 @@ export default function Project() {
                   onClick={() => handleOpen(project)}
                   variant = {!isMobile ? 'image' : true }
                   sx={{
-                    p: { xs: 1.5, sm: 2 },
+                    p: 2,
                     border: "1px solid #4a90e2",
                     borderRadius: 5,
                     bgcolor: "rgba(255,255,255,0.05)",

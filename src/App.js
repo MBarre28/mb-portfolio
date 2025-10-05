@@ -7,6 +7,7 @@ import HomePage from './component/NavBar/home';
 import AboutPage from './component/NavBar/about';
 import ProjectPage from './component/NavBar/project';
 import ContactPage from './component/NavBar/contact';
+import Video from './component/NavBar/video';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/project" element={<ProjectPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/video" element={<Video />} />
       </Routes>
       <Footer />
       </Router>

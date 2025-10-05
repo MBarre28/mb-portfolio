@@ -26,6 +26,7 @@ const Navbar = () => {
     { text: '2. ABOUT', link: "/about" },
     { text: '3. PROJECTS', link: "/project" },
     { text: '4. CONTACT', link: "/contact" },
+    { text: '5. VIDEOS', link: "/video"}
   ];
 
   return (
