@@ -14,7 +14,7 @@ const experience = () => {
         <Box> 
             <img src='images/goldmansachs.png' style={{ height: '60px', marginBlock: 3}}>
             </img>
-            <img src='images/dfnprojectsearch.png' style={{height: '60px'}}>
+            <img src='images/dfnprojectsearch.png' style={{height: '60px', margin: 4}}>
             </img>
             <div style = {{ color: '#ffff', fontFamily: 'monospace', maxWidth: '600px'}}>
             <h2> DFN Project SEARCH - Intern </h2>

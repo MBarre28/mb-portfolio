@@ -14,19 +14,22 @@ const certification = () => {
             <Box>
             <img src='images/goldmansachs.png' style={{ height: '60px'}}>
             </img>
-            <img src='images/google.png' style={{ height: '60px', marginRight: 2}}>
+            <img src='images/google.png' style={{ height: '60px', margin: 5}}>
             </img>
                 <div style={{ Padding: '20px', color: '#ffff', fontFamily: 'monospace' }}>
-                    <ul style={{ color: '#ffff' }}>
                         <h2> Google - Foundations of Cybersecurity  </h2>
-                        <p> <CalendarTodayIcon sx={{ fontSize: 'small' }}></CalendarTodayIcon> <i> July 2025 </i> </p>
-                        <p> Company: Goldman Sachs under DFN Project SEARCH </p>
-                        <p> Grade: pass </p>
+                        <p> <PlaceIcon sx={{ fontSize: 'small' }}> </PlaceIcon> Goldman Sachs, London | <CalendarTodayIcon sx={{ fontSize: 'small' }}></CalendarTodayIcon> <i> July 2025 </i> </p>
+                        <ul style={{ color: '#ffff' }}>
+                        <li> Company: Goldman Sachs under DFN Project SEARCH </li>
+                        <li> Grade: pass </li>
+                        </ul>
+                        <img src='images/ibm.png' style={{ height: '60px'}}></img>
                         <h2> IBM Skillbuild </h2>
-                        <p> <CalendarTodayIcon sx={{ fontSize: 'small' }}></CalendarTodayIcon> <i> May 2025 - August 2025 </i> </p>
-                        <p> Web Development Fundamentals </p>
-                        <p> Grade: pass </p>
-                    </ul>
+                        <p> <CalendarTodayIcon sx={{ fontSize: 'small' }}></CalendarTodayIcon> <i> May 2025 - August 2025 </i></p>
+                        <ul style={{ color: '#ffff' }}>
+                        <li> Web Development Fundamentals </li>
+                        <li> Grade: pass </li>
+                        </ul>
                     <div>
 
                     </div>

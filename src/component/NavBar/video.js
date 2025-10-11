@@ -29,6 +29,30 @@ const tutorials = [
         url: 'https://youtube.com/playlist?list=PLeyh81_9izsqoQRD7XiBsvgZFTXQ9b6Lv&si=V9CjCjMTxZk497Nh',
         thumbnail: '/images/Thumbnail - part 1 JS.PNG',
     },
+    {
+        id: 4,
+        title: 'e-commerce website 🛒',
+        description: 'Highlighting valuable content on an e-commerce website benefits all developers.',
+        url: 'https://youtube.com/playlist?list=PLeyh81_9izsq6WK2zQ5yz09PXZA81AXfy&si=K_yqBTPdS9ZKx4bM',
+        thumbnail: '/images/Thumbnail.png',
+
+    },
+    {
+        id: 5,
+        title: 'Git & GitHub ⌨',
+        description: 'Learn the commands in Git and create your own GitHub account, where you can save your projects.',
+        url: 'https://youtube.com/playlist?list=PLeyh81_9izsrjBrzQh0R8HdQnAyg2XvNa&si=JNpy630dgoJoSmi_',
+        thumbnail: '/images/git.png',
+
+    },
+    {
+        id: 6,
+        title: 'Portfolio Website 😎',
+        description: 'Portfolio website using MUI and React.js.',
+        url: 'https://youtube.com/playlist?list=PLeyh81_9izsq28LcB_SFJIDBR8AWs_I5d&si=IuuudhyH-HxUd-yc',
+        thumbnail: '/images/portfolio.png',
+
+    },
 
 ]
 
@@ -95,7 +119,7 @@ export default function Video() {
                 }}
                 />
                 <Typography variant='h6' gutterBottom sx={{ fontFamily: 'monospace', fontWeight: 'bold', textAlign: 'center', margin: 6, color: '#ffff' }}>
-                    A collection of my Youtube playlist containing front-end content I teach to beginners in web development 
+                    A collection of my Youtube playlist containing tech content I teach to beginners in programming
                 </Typography>
 
                 {/* Tutorial Grid number one */}
