@@ -101,7 +101,7 @@ const Navbar = () => {
 
       {/* Drawer for Mobile */}
       <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
-        <Box sx={{ width: 250, background: '#111', height: '100%', color: '#fff', p: 2, fontSize: '1rem',
+        <Box sx={{ width: 250, background: '#111', height: 5000, color: '#fff', p: 2, fontSize: '1rem',
                   fontFamily: 'monospace', fontWeight: 'bold',}}>
           <List>
             {menuItems.map((item, index) => (
@@ -125,9 +125,7 @@ const Navbar = () => {
               </ListItem>
             ))}
           </List>
-          <br></br>
-          <br></br>
-            <Typography variant = 'h6' sx = {{fontFamily: 'monospace',
+            <Typography variant = 'h6' marginTop={5} sx = {{fontFamily: 'monospace',
                   mx: 1.5,}}> 
               © {new Date().getFullYear()} MB_softsen. All rights reserved.
           </Typography>
