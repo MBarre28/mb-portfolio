@@ -31,7 +31,7 @@ const tutorials = [
     },
     {
         id: 4,
-        title: 'e-commerce website 🛒',
+        title: 'E-commerce website 🛒',
         description: 'Highlighting valuable content on an e-commerce website benefits all developers.',
         url: 'https://youtube.com/playlist?list=PLeyh81_9izsq6WK2zQ5yz09PXZA81AXfy&si=K_yqBTPdS9ZKx4bM',
         thumbnail: '/images/Thumbnail.png',

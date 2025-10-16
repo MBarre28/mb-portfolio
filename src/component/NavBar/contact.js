@@ -58,7 +58,7 @@ const ContactPage = () => {
           variant="h4"
           sx={{ mt: 6, fontFamily: "monospace", fontWeight: "bold", textAlign: "center" }}
         >
-          <Typewriter words={["Get in Touch 💬"]} loop={false} typeSpeed={20} delaySpeed={1000} />
+          <Typewriter words={["Get in Touch 💬"]} typeSpeed={20} delaySpeed={1000} />
         </Typography>
 
         {/* Subtitle */}

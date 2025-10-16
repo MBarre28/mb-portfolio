@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Typography, Box, Button, Fade, Grid, Card, Tooltip, Container, useMediaQuery, useTheme,  } from '@mui/material';
+import { Typography, Box, Button, Fade, Grid, Card, Tooltip, Container, useMediaQuery, useTheme, } from '@mui/material';
 import { motion } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter';
+import Divider from '@mui/material/Divider';
 
 const techStack = [
   { name: 'HTML', logo: '/images/html.png', description: 'HTML' },
@@ -13,17 +14,39 @@ const techStack = [
   { name: 'Python', logo: '/images/python.png', description: 'Python' },
 ];
 
+const featured_projects = [
+  {
+    image: "/images/portfolio24.png",
+    title: "E-Portfolio Website 2024 edition",
+    description: "built in using frameworks for backend including Laravel and MySQL.",
+    link: "https://github.com/MBarre28/MB_PortfolioDev",
+  },
+  {
+    image: "/images/ecom.png",
+    title: "E-commerce website",
+    description: "Built in for django backend framework for e-com store.",
+    link: "https://github.com/MBarre28/MB-ecommerce",
+  },
+]
+
+
 const HomePage = () => {
   const [checked, setChecked] = useState(false);
   const [open, isSetOpen] = useState(false);
   const theme = useTheme();
+  const [selectedProject, setSelectedProject] = useState(null);
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   useEffect(() => {
     setChecked(true);
   }, []);
 
-const matches = useMediaQuery('(min-width:600px)');
+  const handleOpen = (featured_projects) => {
+    setSelectedProject(featured_projects);
+    isSetOpen(true);
+  };
+
+  const matches = useMediaQuery('(min-width:600px)');
   return (
     <Box
       sx={{
@@ -38,7 +61,7 @@ const matches = useMediaQuery('(min-width:600px)');
       <Container maxWidth="lg" sx={{ py: 5 }}>
         <Grid container spacing={4} alignItems="center">
           {/* Left side - Intro text */}
-          <Grid item xs={12} md={6} mt={12}>
+          <Grid item xs={12} md={8} mt={12}>
             <Typography variant="h6" fontFamily="monospace" fontWeight="bold">
               <Typewriter
                 words={['Hello, my name is']}
@@ -60,37 +83,20 @@ const matches = useMediaQuery('(min-width:600px)');
 
             <Typography
               fontFamily="monospace"
-              maxWidth="500px"
+              maxWidth="700px"
               fontSize="18px"
             >
               Aspiring full-stack software developer and cybersecurity enthusiast. I have developed responsive projects and web applications. I teach programming to beginners on my YouTube channel.
             </Typography>
 
-            <Fade in={checked} timeout={2000}>
-              <Typography
-                variant="h5"
-                fontFamily="monospace"
-                sx={{ py: 2 }}
-              >
-                Check out all my projects I have made. 🛠
-              </Typography>
-            </Fade>
-
             <Box sx={{ display: 'flex', gap: 2, mt: 2 }}>
-              <Button variant="outlined" size="large" href="/project" 
-              sx = {{ transition: 'linear 0.3s', borderRadius: 8, "hover": {
-              color: '#263cb8ff',
-              transform: 'scale(1.25)',
-              },
-              }}>
-                VIEW PROJECTS
-              </Button>
-              <Button variant="outlined" size="large" href="/contact"              
-              sx = {{ transition: 'linear 0.3s', borderRadius: 8, "hover": {
-              color: '#263cb8ff',
-              transform: 'scale(1.25)',
-              },
-              }}>
+              <Button variant="outlined" size="large" href="/contact"
+                sx={{
+                  transition: 'linear 0.3s', borderRadius: 8, "hover": {
+                    color: '#263cb8ff',
+                    transform: 'scale(1.25)',
+                  },
+                }}>
                 CONTACT ME
               </Button>
             </Box>
@@ -99,18 +105,18 @@ const matches = useMediaQuery('(min-width:600px)');
           {/* Right side - Image */}
           <Grid item xs={12} md={6} sx={{ textAlign: 'center' }}>
             {!isMobile && (
-            <Box
-              component="img"
-              src="/images/softsen.png"
-              alt="softsen logo"
-              variant = {!isMobile ? 'image' : 'delete' }
-              sx={{
-                maxWidth: '400px',
-                width: { xs: "70%", sm: "60%", md: "100%" },
-                borderRadius: 2,
-                boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
-              }}
-            />
+              <Box
+                component="img"
+                src="/images/softsen.png"
+                alt="softsen logo"
+                variant={!isMobile ? 'image' : 'delete'}
+                sx={{
+                  maxWidth: '400px',
+                  width: { xs: "70%", sm: "60%", md: "100%" },
+                  borderRadius: 2,
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
+                }}
+              />
             )}
           </Grid>
         </Grid>
@@ -123,11 +129,11 @@ const matches = useMediaQuery('(min-width:600px)');
           {/* Mobile responsiveness in home page */}
 
           <Typography
- 
+
             fontWeight="bold"
             fontFamily="monospace"
             align="center"
-            centered = {!isMobile ? 'center' : 'h1'}
+            centered={!isMobile ? 'center' : 'h1'}
 
             gutterBottom
           >
@@ -167,12 +173,90 @@ const matches = useMediaQuery('(min-width:600px)');
               </Grid>
             ))}
           </Grid>
+
         </motion.div>
       </Box>
+      <Fade in={checked} timeout={2000}>
+        <Typography
+          variant="h5"
+          fontFamily="monospace"
+          sx={{ py: 2, textAlign: 'center', marginTop: 5}}
+        >
+        Featured Projects. 🛠
+        <Divider sx={{
+                mb: 5,
+                height: 2, // Makes the line thicker
+                bgcolor: '#ffff', // Sets a custom background color
+                border: 'none', // Removes default border properties
+                outlineStyle: 'initial',
+                display: 'flex',
+                justifyContent: 'middle',
+                margin: 5
+        }}>
+        </Divider>
+        </Typography>
+      </Fade>
+      <Grid container gap={4} rowSpacing={2} display={'flex'} marginLeft={1}> 
+        {featured_projects.map((featured_projects, index) => (
+          <Grid
+          item
+          xs={12}
+          sm={6}
+          md={4}
+          key={index}>
+            <Card
+            onclick={() => handleOpen(featured_projects)}
+            variant={!isMobile ? 'image' : true}
+            sx={{
+              border: "1px solid #4a90e2",
+              borderRadius: 5,
+              textAlign: 'center',
+              bgcolor: 'rgba(29, 7, 37, 0.32)',
+              cursor: 'pointer',
+              margin: 5,
+              height: '350px',
+              width: '350px',
+              objectFit: 'cover', "&:hover": {
+                bgcolor: 'rgba(77, 21, 97, 0.33)',
+                transform: 'scale(1.05)',
+                transition: '0.3s',
+
+              }
+            }}
+            >
+              {featured_projects.image && (
+                <Box
+                component={'img'}
+                src={featured_projects.image}
+                alt={featured_projects.title}
+                sx={{
+                  height: '200px',
+                  width: '375px',
+                  objectFit: 'cover',
+                }}
+                >
+                </Box>
+              )}
+              <Button variant="outlined" size="large" href="/project"
+                sx={{
+                  transition: 'linear 0.3s', 
+                  borderRadius: 8, 
+                  margin: 5, 
+                  marginRight: 4, 
+                  "hover": {
+                    color: '#263cb8ff',
+                    transform: 'scale(1.25)',
+                  },
+                }}>
+                VIEW PROJECTS
+              </Button>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
     </Box>
-    
+
   );
 };
-
 
 export default HomePage;
