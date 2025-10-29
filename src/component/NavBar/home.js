@@ -18,7 +18,7 @@ const featured_projects = [
   {
     image: "/images/portfolio24.png",
     title: "E-Portfolio Website 2024 edition",
-    description: "built in using frameworks for backend including Laravel and MySQL.",
+    description: "built in using frameworks for backend including Laravel and MySQL. ",
     link: "https://github.com/MBarre28/MB_PortfolioDev",
   },
   {
@@ -214,8 +214,9 @@ const HomePage = () => {
               bgcolor: 'rgba(29, 7, 37, 0.32)',
               cursor: 'pointer',
               margin: 5,
-              height: '350px',
+              height: 'fixed',
               width: '350px',
+
               objectFit: 'cover', "&:hover": {
                 bgcolor: 'rgba(77, 21, 97, 0.33)',
                 transform: 'scale(1.05)',
@@ -230,7 +231,7 @@ const HomePage = () => {
                 src={featured_projects.image}
                 alt={featured_projects.title}
                 sx={{
-                  height: '200px',
+                  height: '175px',
                   width: '375px',
                   objectFit: 'cover',
                 }}
@@ -250,6 +251,18 @@ const HomePage = () => {
                 }}>
                 VIEW PROJECTS
               </Button>
+              <br></br>
+              <Typography variant='paragraph' sx={{
+                color: '#ffff',
+                maxWidth: '50px',
+                margin: 1,
+                textAlign: 'center',
+                py: 2
+
+              }}>
+                {featured_projects.description} 
+
+                  </Typography>
             </Card>
           </Grid>
         ))}
